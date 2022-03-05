@@ -45,6 +45,12 @@ public class MedicineController {
 		return "deletepage";
 	}
 	
+	@RequestMapping("/showpage")
+	public String showpage()
+	{
+		return "showpage";
+	}
+	
 	@RequestMapping("/add")
 	public String add(@RequestParam String id, @RequestParam String name, @RequestParam String count, @RequestParam String des)
 	{

@@ -1,5 +1,6 @@
 package com.example.demo.dao;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -92,6 +93,24 @@ public class MedicineDaoImpl implements MedicineDao {
 			{
 				return "existed";
 			}
+	}
+
+	@Override
+	public List<Medicine> selectall() {
+		
+		List<Medicine> medList = jdbcTemplate.query("select * from medicinerepo", (rs,rowCount) -> {
+			
+			Medicine m=new Medicine();
+			m.setId(Integer.parseInt(rs.getString("ID")));
+			m.setName(rs.getString("NAME"));
+			m.setCount(Integer.parseInt(rs.getString("COUNT")));
+			m.setDescription(rs.getString("DESCRIPTION"));
+			return m;
+			
+		});
+		
+		return medList;
+		
 	}
 
 }

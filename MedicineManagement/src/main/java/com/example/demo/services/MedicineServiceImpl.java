@@ -2,7 +2,7 @@ package com.example.demo.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
+import java.util.List;
 import com.example.demo.dao.MedicineDao;
 import com.example.demo.entity.Medicine;
 
@@ -32,6 +32,13 @@ public class MedicineServiceImpl implements MedicineServices {
 		String status = mediDao.updateMedicine(m);
 		
 		return status;
+	}
+
+	@Override
+	public List<Medicine> Select() {
+		List<Medicine> m = mediDao.selectall();
+		
+		return m;
 	}
 
 }

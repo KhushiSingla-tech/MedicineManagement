@@ -59,6 +59,13 @@ http://www.templatemo.com/tm-468-onetel
 					
 				</div>
 			</div>
+			<div class="col-md-4 col-sm-12">
+				<div class="divider-wrapper divider-three">
+					<i class="fa fa-life-ring"></i>
+					<h2 style="color:Black"><a href="showpage">Show</a></h2>
+					
+				</div>
+			</div>
 		</div>
 	</div>
 </div>
