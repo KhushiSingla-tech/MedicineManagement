@@ -98,6 +98,8 @@ public class MedicineDaoImpl implements MedicineDao {
 	@Override
 	public List<Medicine> selectall() {
 		
+		List<Medicine> medi = new ArrayList();
+		
 		List<Medicine> medList = jdbcTemplate.query("select * from medicinerepo", (rs,rowCount) -> {
 			
 			Medicine m=new Medicine();
@@ -105,11 +107,13 @@ public class MedicineDaoImpl implements MedicineDao {
 			m.setName(rs.getString("NAME"));
 			m.setCount(Integer.parseInt(rs.getString("COUNT")));
 			m.setDescription(rs.getString("DESCRIPTION"));
+			
+			medi.add(m);
 			return m;
 			
 		});
 		
-		return medList;
+		return medi;
 		
 	}
 
